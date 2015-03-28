@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView
+    android:id="@+id/scrollview"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="false"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/pic">
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="170dp"
+                android:id="@+id/imageView"
+                android:src="@drawable/airportrush"
+                android:layout_gravity="top" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/airportSearch"
+            android:background="@drawable/layout_bg"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Airport"
+                android:id="@+id/airportTextView"
+                android:textSize="37dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="#40a0f0"
+                android:paddingLeft="5dp"
+                android:layout_marginRight="10dp" />
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:id="@+id/spinner"
+                android:entries="@array/array_airport_choices"
+                android:spinnerMode="dropdown"
+                android:textAlignment="center"
+                android:focusable="false"
+                android:background="#ffffffff"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:layout_marginRight="15dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dateSearch"
+            android:background="@drawable/layout_bg"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                android:id="@+id/dateTextView"
+                android:textSize="37dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="#40a0f0"
+                android:paddingLeft="5dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Medium Text"
+                android:id="@+id/chosenDate"
+                android:background="#ffffffff"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textAlignment="center"
+                android:layout_weight="2" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:text="Set"
+                android:id="@+id/dateSetButton"
+                android:textColor="#40a0f0"
+                android:background="@drawable/buttonshape"
+                android:width="10dp"
+                android:layout_gravity="center"
+                android:onClick="onClickSetDate"
+                android:layout_marginRight="10dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/timeSearch"
+            android:background="@drawable/layout_bg"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Time"
+                android:id="@+id/timeTextView"
+                android:textSize="37dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="#40a0f0"
+                android:paddingLeft="5dp"
+                android:layout_weight="0" />
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Medium Text"
+                android:id="@+id/timeView"
+                android:background="#ffffffff"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:text="Set"
+                android:id="@+id/setTimeButton"
+                android:textColor="#40a0f0"
+                android:background="@drawable/buttonshape"
+                android:width="10dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/flightNoSearch"
+            android:background="@drawable/layout_bg"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Flight #"
+                android:id="@+id/FlightNumberTextView"
+                android:textSize="37dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="#40a0f0"
+                android:paddingLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/flightNumber"
+                android:layout_weight="1"
+                android:background="#ffffffff"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="center"
+                android:hint="@string/text_enter_flight_number" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GO"
+                android:id="@+id/button2"
+                android:layout_gravity="center"
+                android:background="@drawable/buttonshape"
+                android:textColor="#40a0f0"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollview"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="false">
+
+    <LinearLayout
+        android:id="@+id/Screen"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:clickable="false">
+
+        <LinearLayout
+            android:id="@+id/topSection"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center|bottom"
+            android:paddingTop="30dp"
+            android:paddingBottom="25dp">
+
+            <ImageView
+                android:layout_width="273dp"
+                android:layout_height="match_parent"
+                android:id="@+id/gatewaitLogo"
+                android:src="@drawable/finallogo"
+                android:contentDescription="gatewaitlogo" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bottomSection"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/layout_bg"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/GCMID">
+
+                <TextView
+                    android:id="@+id/regLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/padding_small"
+                    android:text="@string/gcm_userid_text"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_gravity="center"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/not_registered"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_red_cross" />
+
+                <TextView
+                    android:id="@+id/gcm_userid_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/padding_small"
+                    android:ellipsize="middle"
+                    android:lines="1"
+                    android:singleLine="true"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:phoneNumber="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/register_unregister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="8">
+
+                <Button
+                    android:id="@+id/register_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/padding_small"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:onClick="onClick"
+                    android:text="@string/register_text"
+                    android:background="@drawable/buttonshape"
+                    android:textColor="#40a0f0"
+                    android:typeface="normal" />
+
+                <Button
+                    android:id="@+id/unregister_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/padding_small"
+                    android:layout_weight="1"
+                    android:onClick="onClick"
+                    android:text="@string/unregister_text"
+                    android:background="@drawable/buttonshape"
+                    android:textColor="#40a0f0"
+                    android:typeface="normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:id="@+id/Username">
+
+                <TextView
+                    android:id="@+id/TextView01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/padding_small"
+                    android:text="@string/text_name"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <EditText
+                    android:id="@+id/name_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/padding_small"
+                    android:hint="@string/text_enter_your_name"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:text="@string/text_user"
+                    android:textColor="#40a0f0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:id="@+id/Msgtype">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/padding_small"
+                    android:text="@string/message_text"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Spinner
+                    android:id="@+id/spinner_message_type"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:entries="@array/array_message_actions"
+                    tools:listitem="@android:layout/simple_spinner_item" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:id="@+id/Msg">
+
+                <EditText
+                    android:id="@+id/message_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/padding_small"
+                    android:layout_weight="1"
+                    android:hint="@string/enter_message_text"
+                    android:imeOptions="actionSend"
+                    android:inputType="text" >
+
+                    <requestFocus />
+                </EditText>
+
+                <Button
+                    android:id="@+id/send_message_button"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:onClick="onClick"
+                    android:text="@string/send_message_text" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
